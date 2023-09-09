@@ -1,3 +1,4 @@
+/* eslint-disable qwik/jsx-img */
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import heartFace from "~/assets/images/heart-face.svg";
@@ -12,18 +13,18 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <div class="flex flex-col justify-center items-center lg:px-24 lg:pb-20 px-6 pb-6">
+      <div class="flex flex-col w-full justify-center items-center lg:px-24 lg:pb-20 px-6 pb-6">
         <div class="flex-box flex-col md:flex-row lg:pb-32 lg:pt-72 pb-16 pt-16">
           <div>
             <img
               src={heartFace}
-              class="min-w-max"
+              class="max-w-lg lg:max-w-lg"
               alt="heart face"
-              height={293}
-              width={305}
+              width="305"
+              height="293"
             />
           </div>
-          <div class="w-[70%]">
+          <div class=" lg:w-[70%]">
             <h3 class="text-5xl mb-5">
               What is <span>SpotifAI?</span>
             </h3>
@@ -40,7 +41,7 @@ export default component$(() => {
         </div>
         {/* second */}
         <div class="flex-box flex-col-reverse lg:flex-row w-full mb-16">
-          <div class="w-[70%]">
+          <div class="lg:w-[70%]">
             <h3 class="text-5xl mb-5">Can experts use SpotifAI.</h3>
             <p class="mb-6 text-lg">
               SpotifAI has the potential to revolutionize the podcast field. By
@@ -78,7 +79,7 @@ export default component$(() => {
           <div>
             <img
               src={bang}
-              class="min-w-max"
+              class="max-w-lg lg:max-w-lg"
               alt="heart face"
               height={293}
               width={305}
