@@ -41,9 +41,11 @@ export default component$(() => {
               suitable to your idea with text and sound format. Don't wait try
               it Now.
             </p>
-            <button class="btn btn-primary rounded-full capitalize px-20  font-neov ">
-              <Link href="/chat/">Generate Now</Link>
-            </button>
+            <Link href="/chat/">
+              <button class="btn btn-primary rounded-full capitalize px-20  font-neov ">
+                Generate Now
+              </button>
+            </Link>
           </div>
         </div>
         <div class="w-full">

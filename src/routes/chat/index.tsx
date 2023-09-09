@@ -1,12 +1,9 @@
 /* eslint-disable qwik/jsx-img */
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { useNavigate } from "@builder.io/qwik-city";
 
 import micro from "~/assets/micro.svg";
 export default component$(() => {
-  const nav = useNavigate();
-
   return (
     <>
       <div class="flex-box flex-col h-screen">
@@ -33,12 +30,7 @@ export default component$(() => {
           </div>
         </div>
         <div class="md:h-[85px] absolute bottom-0 flex-box flex-end w-full px-3">
-          <div
-            class="md:w-[752px] md:h-[85px] pl-6 lg:pr-[350px] w-full py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 inline-flex mr-2"
-            onClick$={async () => {
-              await nav("/chatbot");
-            }}
-          >
+          <div class="md:w-[752px] md:h-[85px] pl-6 lg:pr-[350px] w-full py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 inline-flex mr-2">
             <div class="md:h-[23px] flex-box gap-[327px] flex">
               <div class="text-white text-base font-normal">Type your idea</div>
             </div>
