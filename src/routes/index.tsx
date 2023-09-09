@@ -25,10 +25,10 @@ export default component$(() => {
             />
           </div>
           <div class=" lg:w-[70%]">
-            <h3 class="text-5xl mb-5">
+            <h3 class="text-3xl font-medium lg:text-5xl my-5">
               What is <span>SpotifAI?</span>
             </h3>
-            <p class=" text-lg">
+            <p class="">
               SpotifAI is an AI platform that helps you create podcasts. Just
               give it an idea, and it will generate a podcast script for you in
               text format You can then use the script to create an audio
@@ -42,7 +42,9 @@ export default component$(() => {
         {/* second */}
         <div class="flex-box flex-col-reverse lg:flex-row w-full mb-16">
           <div class="lg:w-[70%]">
-            <h3 class="text-5xl mb-5">Can experts use SpotifAI.</h3>
+            <h3 class="text-3xl font-medium lg:text-5xl my-5">
+              Can experts use SpotifAI?
+            </h3>
             <p class="mb-6 text-lg">
               SpotifAI has the potential to revolutionize the podcast field. By
               making it easier and faster to create high-quality podcasts,
@@ -86,8 +88,8 @@ export default component$(() => {
             />
           </div>
         </div>
-        <div class="w-full h-full px-10 py-10 md:w-[984px] md:h-[120px] relative rounded-[100px] border border-stone-300 backdrop-blur-[45px] flex-box flex-col bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text  text-transparent">
-          <div class="text-center text-[22px] font-bold">
+        <div class="w-full h-full lg:px-10 lg:py-10 p-4 md:w-[984px] md:h-[120px]  rounded-[100px] border border-stone-300 backdrop-blur-[45px] flex-box flex-col bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text  text-transparent">
+          <div class="text-center text-md lg:text-[1.30rem] font-bold">
             Make the journey begin. Let your ideas shine and make your first
             podcast.{" "}
           </div>

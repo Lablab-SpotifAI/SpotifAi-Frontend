@@ -17,7 +17,7 @@ export default component$(() => {
             draggable={false}
           />
           <div>
-            <div class="md:w-20 h-[33px] px-[21px] py-[5px] bg-pink-950 rounded-[50px] justify-center items-center gap-0.5 inline-flex">
+            <div class="md:w-20 h-[33px] px-5 py-1 bg-pink-950 rounded-full justify-center items-center gap-0.5 inline-flex">
               <div class="w-5 h-5 relative">
                 <img width={100} height={100} src="stars.png" alt="stars" />
               </div>

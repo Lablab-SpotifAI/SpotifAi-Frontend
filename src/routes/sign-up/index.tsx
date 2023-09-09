@@ -12,8 +12,8 @@ export default component$(() => {
   return (
     <>
       <section class="h-screen w-full flex justify-center items-center px-6 lg:px-0">
-        <div class="lg:h-[60%] lg:w-[45%] w-full h-[40%] flex justify-center items-center border rounded-[3rem] bg-[#13011F]  relative shadow-lg border-stone-300">
-          <div class="flex flex-col justify-center lg:w-[50%] w-full px-6 gap-5">
+        <div class="lg:h-[60%] lg:w-[45%] w-full h-[40%] flex justify-center items-center border rounded-[3rem] bg-[#13011F] relative shadow-lg border-stone-300">
+          <div class="flex flex-col justify-center lg:w-[60%] w-full px-6 gap-5">
             <h3 class="font-bold text-xl lg:text-5xl text-left">Register</h3>
             <p class="font-normal text-base text-left">
               Welcome on a new adventure.try our magic now..!
