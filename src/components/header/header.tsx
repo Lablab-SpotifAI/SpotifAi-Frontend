@@ -41,7 +41,7 @@ export default component$(() => {
               it Now.
             </p>
             <button class="btn btn-primary rounded-full capitalize px-20  font-neov ">
-              <Link>Generate Now</Link>
+              <Link href="/chat/">Generate Now</Link>
             </button>
           </div>
         </div>
