@@ -2,7 +2,8 @@
 import { component$ } from "@builder.io/qwik";
 import { useAuthSignin } from "../plugin@auth";
 // import { useLocation } from "@builder.io/qwik-city";
-import { GoMarkGithub16 } from "@qwikest/icons/octicons";
+// import { GoMarkGithub16 } from "@qwikest/icons/octicons";
+import { SiGoogle } from "@qwikest/icons/simpleicons";
 import RegisterImg from "~/assets/images/register-img.svg";
 
 export default component$(() => {
@@ -17,7 +18,7 @@ export default component$(() => {
             <p class="font-normal text-base text-left">
               Welcome on a new adventure.try our magic now..!
             </p>
-            <button
+            {/* <button
               class="btn btn-outline hover:btn-primary rounded-full capitalize font-neov btn-block justify-start"
               onClick$={async () =>
                 await signUp.submit({
@@ -28,6 +29,18 @@ export default component$(() => {
             >
               <GoMarkGithub16 class="h-5 w-5" />
               Register using github
+            </button> */}
+            <button
+              class="btn btn-outline hover:btn-primary rounded-full capitalize font-neov btn-block justify-start"
+              onClick$={async () =>
+                await signUp.submit({
+                  providerId: "google",
+                  // options: { callbackUrl: `localhost:5173/callback/` },
+                })
+              }
+            >
+              <SiGoogle class="h-5 w-5" />
+              Register using Google
             </button>
             <img
               src={RegisterImg}

@@ -15,5 +15,11 @@ export default defineConfig(() => {
     optimizeDeps: {
       include: ["@auth/core"],
     },
+  //   resolve: {
+  //     alias: {
+  //         // eslint-disable-next-line @typescript-eslint/naming-convention
+  //         '.prisma/client/index-browser': './node_modules/.prisma/client/index-browser.js',
+  //     },
+  // },
   };
 });

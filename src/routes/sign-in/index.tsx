@@ -2,7 +2,8 @@
 import { component$ } from "@builder.io/qwik";
 import { useAuthSignin } from "../plugin@auth";
 // import { useLocation } from "@builder.io/qwik-city";
-import { GoMarkGithub16 } from "@qwikest/icons/octicons";
+import { SiGoogle } from "@qwikest/icons/simpleicons";
+// import { GoMarkGithub16 } from "@qwikest/icons/octicons";
 import SignInImg from "~/assets/images/sign-in.svg";
 
 export default component$(() => {
@@ -17,7 +18,7 @@ export default component$(() => {
             <p class="font-normal text-base text-left">
               Ooops!..Guess who's back again.
             </p>
-            <button
+            {/* <button
               class="btn btn-outline hover:btn-primary rounded-full capitalize font-neov btn-block justify-start"
               onClick$={async () =>
                 await signIn.submit({
@@ -28,6 +29,18 @@ export default component$(() => {
             >
               <GoMarkGithub16 class="h-5 w-5" />
               Login using github
+            </button> */}
+            <button
+              class="btn btn-outline hover:btn-primary rounded-full capitalize font-neov btn-block justify-start"
+              onClick$={async () =>
+                await signIn.submit({
+                  providerId: "google",
+                  // options: { callbackUrl: `${loc.url}` },
+                })
+              }
+            >
+              <SiGoogle class="h-5 w-5" />
+              Login using Google
             </button>
             <img
               src={SignInImg}

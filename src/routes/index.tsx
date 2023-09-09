@@ -7,14 +7,11 @@ import ImgstarYellow from "~/assets/images/yellow-star.png?jsx";
 import ImgstarPink from "~/assets/images/pink-star.png?jsx";
 // import Slogan from "~/components/slogan/slogan";
 import Header from "~/components/header/header";
-import { useAuthSession } from "./plugin@auth";
 
 export default component$(() => {
-  const session = useAuthSession();
   return (
     <>
       <Header />
-      <h1>{session.value?.user?.email && <p>it exists</p>}</h1>
       <div class="flex flex-col justify-center items-center px-24 pb-20">
         <div class="flex-box flex-col md:flex-row pb-32 pt-72">
           <div>

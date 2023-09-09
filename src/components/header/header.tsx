@@ -7,13 +7,14 @@ export default component$(() => {
   return (
     <>
       <div class="hero items-start bg-base-100 flex-box flex-col pt-4 ">
-        <div class="flex flex-col justify-center lg:flex-row-reverse items-center lg:justify-between px-16 z-10">
+        <div class="flex flex-col justify-center lg:flex-row-reverse items-center lg:justify-between px-16 z-[1]">
           <img
             src={bg}
-            class="max-w-md lg:max-w-xl mr-8 lg:mr-0"
+            class="max-w-md lg:max-w-xl mr-8 lg:mr-0 select-none"
             alt="header-bg"
             height={800}
             width={800}
+            draggable={false}
           />
           <div>
             <div class="md:w-20 h-[33px] px-[21px] py-[5px] bg-pink-950 rounded-[50px] justify-center items-center gap-0.5 inline-flex">
@@ -48,10 +49,11 @@ export default component$(() => {
         <div class="w-full">
           <img
             src={effect}
-            class="w-full absolute -bottom-44 -z-0"
+            class="w-full absolute -bottom-44 -z-0 select-none"
             alt="effect"
             height={100}
             width={800}
+            draggable={false}
           />
         </div>
       </div>
