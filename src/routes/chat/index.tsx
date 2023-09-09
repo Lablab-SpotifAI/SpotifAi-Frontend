@@ -62,7 +62,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "LeanardoAi Chatbot",
+  title: "SpotifAI Chatbot",
   meta: [
     {
       name: "description",
