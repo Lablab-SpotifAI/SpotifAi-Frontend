@@ -28,15 +28,15 @@ export default component$(() => {
           </div>
           <div class="w-[70%]">
             <h3 class="text-5xl mb-5">
-              What is <span>Leanardo.Ai?</span>
+              What is <span>SpotifAI?</span>
             </h3>
             <p class=" text-lg">
-              Leonardo.Ai is an AI platform that helps you create podcasts. Just
+              SpotifAI is an AI platform that helps you create podcasts. Just
               give it an idea, and it will generate a podcast script for you in
               text format You can then use the script to create an audio
               podcast.Leonardo is free to use for basic features, and there are
               paid plans available for businesses and teams. Here are some of
-              the benefits of using Leonardo.Ai to create podcasts: Save
+              the benefits of using SpotifAI to create podcasts: Save
               time,Improve quality,Get feedback and Collaborate with others
             </p>
           </div>
@@ -44,10 +44,10 @@ export default component$(() => {
         {/* second */}
         <div class="flex-box flex-col md:flex-row w-full mb-52">
           <div class="w-[70%]">
-            <h3 class="text-5xl mb-5">Can experts use Leonardo.Ai.</h3>
+            <h3 class="text-5xl mb-5">Can experts use SpotifAI.</h3>
             <p class="mb-6 text-lg">
-              Leonardo.Ai has the potential to revolutionize the podcast field.
-              By making it easier and faster to create high-quality podcasts,
+              SpotifAI has the potential to revolutionize the podcast field. By
+              making it easier and faster to create high-quality podcasts,
               Leonardo can help more people start and grow their podcast
               businesses.Experts in the podcast field can use Leonardo to reach
               another level by:
@@ -100,7 +100,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Leanardo.Ai",
+  title: "SpotifAI",
   meta: [
     {
       name: "description",

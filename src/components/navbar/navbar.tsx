@@ -18,7 +18,7 @@ export default component$(() => {
               width={50}
               class="w-7 h-7"
             />
-            Leonardo.Ai
+            SpotifAI
             {session.value?.user?.email}
           </Link>
         </div>
