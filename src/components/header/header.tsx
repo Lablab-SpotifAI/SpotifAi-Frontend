@@ -1,11 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import bg from "~/assets/images/header-bg.svg";
 import effect from "~/assets/images/effect.svg";
-import { useNavigate } from "@builder.io/qwik-city";
+import { Link } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const nav = useNavigate();
-
   return (
     <>
       <div class="hero items-start bg-base-100 flex-box flex-col pt-4 ">
@@ -42,14 +40,9 @@ export default component$(() => {
               suitable to your idea with text and sound format. Don't wait try
               it Now.
             </p>
-            <div
-              class="h-[54.46px] px-16 py-[15px] rounded-[55px] flex-box gap-1 inline-flex cursor-pointer"
-              onClick$={async () => {
-                await nav("/chat");
-              }}
-            >
-              <div class="btn btn-primary rounded-full capitalize px-20  font-neov ">Generate Now</div>
-            </div>
+            <button class="btn btn-primary rounded-full capitalize px-20  font-neov ">
+              <Link>Generate Now</Link>
+            </button>
           </div>
         </div>
         <div class="w-full">

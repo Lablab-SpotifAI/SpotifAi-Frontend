@@ -5,13 +5,16 @@ import bang from "~/assets/images/bang.svg";
 import ImgstarGreen from "~/assets/images/green-star.png?jsx";
 import ImgstarYellow from "~/assets/images/yellow-star.png?jsx";
 import ImgstarPink from "~/assets/images/pink-star.png?jsx";
+// import Slogan from "~/components/slogan/slogan";
 import Header from "~/components/header/header";
+import { useAuthSession } from "./plugin@auth";
 
 export default component$(() => {
+  const session = useAuthSession();
   return (
     <>
       <Header />
-
+      <h1>{session.value?.user?.email && <p>it exists</p>}</h1>
       <div class="flex flex-col justify-center items-center px-24 pb-20">
         <div class="flex-box flex-col md:flex-row pb-32 pt-72">
           <div>
@@ -25,15 +28,15 @@ export default component$(() => {
           </div>
           <div class="w-[70%]">
             <h3 class="text-5xl mb-5">
-              What is <span>SpotifAI?</span>
+              What is <span>Leanardo.Ai?</span>
             </h3>
             <p class=" text-lg">
-              SpotifAI is an AI platform that helps you create podcasts. Just
+              Leonardo.Ai is an AI platform that helps you create podcasts. Just
               give it an idea, and it will generate a podcast script for you in
               text format You can then use the script to create an audio
               podcast.Leonardo is free to use for basic features, and there are
               paid plans available for businesses and teams. Here are some of
-              the benefits of using SpotifAI to create podcasts: Save
+              the benefits of using Leonardo.Ai to create podcasts: Save
               time,Improve quality,Get feedback and Collaborate with others
             </p>
           </div>
@@ -41,10 +44,10 @@ export default component$(() => {
         {/* second */}
         <div class="flex-box flex-col md:flex-row w-full mb-52">
           <div class="w-[70%]">
-            <h3 class="text-5xl mb-5">Can experts use SpotifAI.</h3>
+            <h3 class="text-5xl mb-5">Can experts use Leonardo.Ai.</h3>
             <p class="mb-6 text-lg">
-              SpotifAI has the potential to revolutionize the podcast field. By
-              making it easier and faster to create high-quality podcasts,
+              Leonardo.Ai has the potential to revolutionize the podcast field.
+              By making it easier and faster to create high-quality podcasts,
               Leonardo can help more people start and grow their podcast
               businesses.Experts in the podcast field can use Leonardo to reach
               another level by:
@@ -97,7 +100,7 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "SpotifAI",
+  title: "Leanardo.Ai",
   meta: [
     {
       name: "description",

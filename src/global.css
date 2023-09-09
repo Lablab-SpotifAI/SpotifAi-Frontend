@@ -41,10 +41,10 @@ html {
   box-sizing: border-box;
 }
 
-/* body {
+body {
   padding: 0;
   line-height: inherit;
-} */
+}
 
 @layer components {
 	.menu-item {
