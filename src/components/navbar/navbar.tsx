@@ -9,7 +9,7 @@ export default component$(() => {
   const signOut = useAuthSignout();
   return (
     <>
-      <div class="navbar bg-info shadow-lg">
+      <div class="navbar bg-info shadow-lg h-[4rem]">
         <div class="flex-1">
           <Link href="/" class="btn btn-ghost normal-case text-xl">
             <img
@@ -57,7 +57,7 @@ export default component$(() => {
           ) : (
             <>
               <Link href="/sign-in/">
-                <button class="btn btn-outline hover:btn-primary rounded-full capitalize font-neov w-28 ">
+                <button class="btn btn-outline rounded-full capitalize font-neov w-28 ">
                   Login
                 </button>
               </Link>

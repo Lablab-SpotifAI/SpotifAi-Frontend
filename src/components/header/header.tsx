@@ -6,14 +6,14 @@ import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <div class="hero items-start bg-base-100 flex-box flex-col pt-4">
+      <div class="hero items-start bg-base-100 flex-box flex-col pt-4 w-full h-[calc(100dvh - 4rem)]">
         <div class="flex flex-col justify-center lg:flex-row-reverse items-center lg:justify-between px-6 lg:px-16 z-[1]">
           <img
             src={bg}
-            class="max-w-sm lg:max-w-xl mr-8 lg:mr-0 select-none"
+            class=" lg:max-w-xl mr-8 lg:mr-0 select-none max-w-xs"
             alt="header-bg"
-            height={800}
-            width={800}
+            height={600}
+            width={600}
             draggable={false}
           />
           <div>
