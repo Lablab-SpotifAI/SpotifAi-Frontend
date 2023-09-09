@@ -12,8 +12,8 @@ export default component$(() => {
   return (
     <>
       <Header />
-      <div class="flex flex-col justify-center items-center px-24 pb-20">
-        <div class="flex-box flex-col md:flex-row pb-32 pt-72">
+      <div class="flex flex-col justify-center items-center lg:px-24 lg:pb-20 px-6 pb-6">
+        <div class="flex-box flex-col md:flex-row lg:pb-32 lg:pt-72 pb-16 pt-16">
           <div>
             <img
               src={heartFace}
@@ -39,7 +39,7 @@ export default component$(() => {
           </div>
         </div>
         {/* second */}
-        <div class="flex-box flex-col md:flex-row w-full mb-52">
+        <div class="flex-box flex-col-reverse lg:flex-row w-full mb-16">
           <div class="w-[70%]">
             <h3 class="text-5xl mb-5">Can experts use SpotifAI.</h3>
             <p class="mb-6 text-lg">

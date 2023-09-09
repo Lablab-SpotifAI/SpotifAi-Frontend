@@ -6,11 +6,11 @@ import { Link } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <div class="hero items-start bg-base-100 flex-box flex-col pt-4 ">
-        <div class="flex flex-col justify-center lg:flex-row-reverse items-center lg:justify-between px-16 z-[1]">
+      <div class="hero items-start bg-base-100 flex-box flex-col pt-4">
+        <div class="flex flex-col justify-center lg:flex-row-reverse items-center lg:justify-between px-6 lg:px-16 z-[1]">
           <img
             src={bg}
-            class="max-w-md lg:max-w-xl mr-8 lg:mr-0 select-none"
+            class="max-w-sm lg:max-w-xl mr-8 lg:mr-0 select-none"
             alt="header-bg"
             height={800}
             width={800}
@@ -24,13 +24,13 @@ export default component$(() => {
               <div class="text-white text-base font-normal">Ai</div>
             </div>
             <h1 class="flex flex-col">
-              <span class="text-white text-6xl font-bold lg:leading-snug leading-tight">
+              <span class="text-white text-3xl lg:text-6xl font-bold lg:leading-snug leading-tight">
                 Generate any{" "}
-                <span class="text-purple-950 text-6xl font-bold lg:leading-snug leading-tight">
+                <span class="text-purple-950 text-3xl lg:text-6xl font-bold lg:leading-snug leading-tight">
                   podcast
                 </span>
               </span>
-              <span class="text-white text-6xl font-bold lg:leading-snug leading-tight">
+              <span class="text-white text-3xl lg:text-6xl font-bold lg:leading-snug leading-tight">
                 idea in your mind in one click
               </span>
             </h1>
@@ -51,7 +51,7 @@ export default component$(() => {
         <div class="w-full">
           <img
             src={effect}
-            class="w-full absolute -bottom-44 -z-0 select-none"
+            class="w-full absolute -bottom-44 -z-0 select-none hidden lg:block"
             alt="effect"
             height={100}
             width={800}
