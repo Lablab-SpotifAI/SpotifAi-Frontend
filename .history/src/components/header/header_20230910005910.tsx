@@ -2,10 +2,8 @@ import { component$ } from "@builder.io/qwik";
 import bg from "~/assets/images/header-bg.svg";
 import effect from "~/assets/images/effect.svg";
 import { Link } from "@builder.io/qwik-city";
-import { useAuthSession } from "~/routes/plugin@auth";
-export default component$(() => {
-  const session = useAuthSession();
 
+export default component$(() => {
   return (
     <>
       <div class="hero items-start bg-base-100 flex-box flex-col pt-4 w-full h-[calc(100dvh - 4rem)]">
@@ -43,19 +41,11 @@ export default component$(() => {
               suitable to your idea with text and sound format. Don't wait try
               it Now.
             </p>
-            {session.value?.user ? (
-              <Link href="/chat">
-                <button class="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov ">
-                  Generate Now
-                </button>
-              </Link>
-            ) : (
-              <Link href="/sign-in">
-                <button class="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov ">
-                  Generate Now
-                </button>
-              </Link>
-            )}
+            <Link href="/chat/">
+              <button class="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov ">
+                Generate Now
+              </button>
+            </Link>
           </div>
         </div>
         <div class="w-full">

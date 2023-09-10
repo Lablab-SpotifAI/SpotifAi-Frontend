@@ -44,7 +44,7 @@ export default component$(() => {
               it Now.
             </p>
             {session.value?.user ? (
-              <Link href="/chat">
+              <Link href="/sign-in">
                 <button class="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov ">
                   Generate Now
                 </button>
