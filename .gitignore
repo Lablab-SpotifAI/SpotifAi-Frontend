@@ -44,7 +44,5 @@ lerna-debug.log*
 
 # Vercel
 .vercel
-
-.vercel
-
-.vercel
+.history
+.env
