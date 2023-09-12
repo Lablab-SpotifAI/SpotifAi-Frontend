@@ -19,12 +19,16 @@ export const Chat = () => {
   const [audioURL, setAudioURL] = useState(null);
 
   const prompt = document.querySelector("input");
+  const btn = document.querySelector("button");
+
   function disablePrompt() {
     prompt.disabled = true;
+    btn.disabled = true;
   }
 
   function enablePrompt() {
     prompt.disabled = false;
+    btn.disabled = false;
   }
   // const [messages, setMessages] = useState([
   //   {
@@ -81,7 +85,7 @@ export const Chat = () => {
       // define how chatgpt talks in initial message
       role: "system",
       // content: "You are an AI Assistant chatbot of SpotifAI a website that help users generate their favorite podcasts.",
-      content: `"You are a professional writer specializing in writing podcast scripts.
+      content: `You are a professional writer specializing in writing podcast scripts.
         I will tell you what is the subject that I want and you will give me an entertaining script to use.
         You will make sure there are no placeholders or fields to replace.
         You can imagine the hosts's name and other personal information.
@@ -94,8 +98,8 @@ export const Chat = () => {
         I will also tell you what is the gender of the speaker in the podcast.
         Do not specify any music or sound effects or laughs or coughs or any sound-related detail.
         And Do Not mention that the speaker is talking like this: "Speaker:" or "Host:"
-        All the details will be included in my prompt."
-        I want the script to be no long than 1000 characters long and the reader of the script is female`,
+        All the details will be included in my prompt.
+        I want the script to be no long than 50 characters long and the reader of the script is female and Answer as short and concise as possible`,
     };
 
     // Rates considered for words per minute and words per token
@@ -110,7 +114,7 @@ export const Chat = () => {
       model: "gpt-3.5-turbo",
       messages: [systemMessage, ...apiMessages],
       // messages: [ ...apiMessages],
-      // max_tokens: 300,
+      // max_tokens: 100,
       // max_tokens: tokens,
     };
     let response = "";
@@ -148,7 +152,6 @@ export const Chat = () => {
       });
     setInput("");
     // enablePrompt();
-
   }
 
   // Define a function called textToSpeech that takes in a string called inputText as its argument.
@@ -208,7 +211,7 @@ export const Chat = () => {
       <Header />
       {/* <div className="Chat flex-box flex-col"> */}
       <div className="flex flex-col relative">
-        <div className="chatbox">
+        <div className="chatbox h-full">
           <div className="flex-box chat-log h-[70vh]">
             {loading ? (
               <>
@@ -237,7 +240,7 @@ export const Chat = () => {
                 ))}
 
                 {audioURL ? (
-                  <audio autoPlay controls>
+                  <audio autoPlay controls className="hidden">
                     <source src={audioURL} type="audio/mpeg" />
                   </audio>
                 ) : (
@@ -265,19 +268,18 @@ export const Chat = () => {
               onChange={(e) => setInput(e.target.value)}
               // onSubmit={() => sendDataToArduino("x")}
               placeholder="Type your idea"
-              className=" text-white text-base font-normal flex-box flex pl-6 flex-[0.8] py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 w-full md:h-20"
+              className="clk text-white text-base font-normal flex-box flex pl-6 flex-[0.8] py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 w-full md:h-20"
             />
+            <button
+              className="clk px-2 py-5 md:h-20 rounded-full flex-[0.2] flex-box hover:text-purple-950 hover:bg-secondary cursor-pointer btn-primary capitalize btn-block lg:btn-wide font-neov "
+              onClick={handleSubmit}
+            >
+              <img className="h-5 w-5" src="/stars.png" alt="stars" />
+              <p className="text-base font-normal px-2 hidden md:block hover:font-bold">
+                Generate
+              </p>
+            </button>
           </form>
-
-          <div
-            className="px-2 py-5 md:h-20 bg-gradient-to-br from-blue-700 to-purple-950 rounded-full flex-[0.2] flex-box"
-            onClick={handleSubmit}
-          >
-            <img className="h-5 w-5" src="/stars.png" alt="stars" />
-            <div className="text-neutral-50 text-base font-normal px-2 hidden md:block">
-              Generate
-            </div>
-          </div>
         </div>
       </div>
     </>
