@@ -1,9 +1,12 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Header } from "../components/Home/Header";
 import axios from "axios";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ScaleLoader } from "react-spinners";
+import { useEffect, useState } from "react";
+import { auth } from "../config/firebase";
+import { getAuth } from "firebase/auth";
 
 const orgKey = import.meta.env.VITE_ORG;
 const openaiKey = import.meta.env.VITE_OPENAI;
@@ -11,6 +14,22 @@ const elevenKey = import.meta.env.VITE_ELEVEN;
 const voiceKey = import.meta.env.VITE_VOICE;
 
 export const Chat = () => {
+  const nav = useNavigate();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+        nav("/chat");
+      } else {
+        setUser(null);
+        nav("/sign-in");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
   //add state for input and chat log
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(true);
@@ -33,7 +52,7 @@ export const Chat = () => {
   // const [messages, setMessages] = useState([
   //   {
   //     sender: "gpt",
-  //     message: "Hello, I am chatGPT, How can I assist you today ? ",
+  //     message: "Hello, I am SpotifAI, How can I assist you today ? ",
   //   },
   // ]);
 
@@ -45,6 +64,7 @@ export const Chat = () => {
   // function clearAudio() {
   //   setMessages([]);
   // }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     disablePrompt();
@@ -201,11 +221,6 @@ export const Chat = () => {
     enablePrompt();
   };
 
-  // Use the useEffect hook to call the handleAudioFetch function once when the component mounts
-  // useEffect(() => {
-  //   handleAudioFetch();
-  // }, []);
-
   return (
     <>
       <Header />
@@ -266,7 +281,6 @@ export const Chat = () => {
               rows="1"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              // onSubmit={() => sendDataToArduino("x")}
               placeholder="Type your idea"
               className="clk text-white text-base font-normal flex-box flex pl-6 flex-[0.8] py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 w-full md:h-20"
             />
@@ -286,18 +300,33 @@ export const Chat = () => {
   );
 };
 const ChatMessage = ({ messages }) => {
+  const [photo, setPhoto] = useState("");
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const usr = getAuth();
+        const aut = usr.currentUser;
+        // const photo = aut.photoURL;
+        setPhoto(aut.photoURL);
+      } else {
+        setPhoto("user.png");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
   return (
     <div
-      className={`chat-message justify-top ${
-        messages.sender === "gpt" && "chatgpt"
-      }`}
+      className={`chat-message justify-top ${messages.sender === "gpt" && "chatgpt"
+        }`}
     >
       <div className="chat-message-center">
         <div className={`avatar  ${messages.sender === "gpt" && "chatgpt"}`}>
           {messages.sender === "gpt" ? (
             <img className="" src="logo.svg" alt="gpt" />
           ) : (
-            <img className="img flex-end" src="user.png" alt="user" />
+            <>
+              <img className="img flex-end" src={photo} alt="user" />
+            </>
           )}
         </div>
 

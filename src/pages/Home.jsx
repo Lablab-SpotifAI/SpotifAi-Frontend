@@ -1,9 +1,23 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Home/Header";
+import { useEffect, useState } from "react";
+import { auth } from "../config/firebase";
 
 export const Home = () => {
   const nav = useNavigate();
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
     <>
       <Header />
@@ -42,22 +56,20 @@ export const Home = () => {
               suitable to your idea with text and sound format. Don't wait try
               it Now.
             </p>
-            {/* {session.value?.user ? ( */}
-
-            <button
-              className="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov "
-              onClick={() => nav("/chat")}
-            >
-              Generate Now
-            </button>
-
-            {/* ) : ( */}
-            {/* <Link href="/sign-in/">
+            {!user ? (
+              <button
+                className="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov "
+                onClick={() => nav("/sign-in")}
+              >
+                Generate Now
+              </button>
+            ) : (
+              <div onClick={() => nav("/chat")}>
                 <button className="btn btn-primary rounded-full capitalize btn-block lg:btn-wide font-neov ">
                   Generate Now
                 </button>
-              </Link> */}
-            {/* )} */}
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full">
