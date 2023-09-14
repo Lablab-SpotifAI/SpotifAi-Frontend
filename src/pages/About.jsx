@@ -29,7 +29,7 @@ function About() {
                 <li>
                   <a
                     href={person.github}
-                    className="text-black hover:text-white"
+                    className="text-white hover:text-gray-700"
                   >
                     <Github />
                   </a>
