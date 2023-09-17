@@ -134,7 +134,7 @@ export const Chat = () => {
       model: "gpt-3.5-turbo",
       messages: [systemMessage, ...apiMessages],
       // messages: [ ...apiMessages],
-      // max_tokens: 100,
+      max_tokens: 100,
       // max_tokens: tokens,
     };
     let response = "";
