@@ -255,7 +255,7 @@ export const Chat = () => {
                 ))}
 
                 {audioURL ? (
-                  <audio autoPlay controls className="hidden">
+                  <audio autoPlay controls>
                     <source src={audioURL} type="audio/mpeg" />
                   </audio>
                 ) : (
