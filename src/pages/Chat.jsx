@@ -227,7 +227,7 @@ export const Chat = () => {
       {/* <div className="Chat flex-box flex-col"> */}
       <div className="flex flex-col relative">
         <div className="chatbox h-full">
-          <div className="flex-box chat-log h-[70vh]">
+          <div className="flex-box chat-log h-full">
             {loading ? (
               <>
                 <div className="flex-box">
