@@ -226,7 +226,7 @@ export const Chat = () => {
       <Header />
       {/* <div className="Chat flex-box flex-col"> */}
       <div className="flex flex-col relative">
-        <div className="chatbox h-full">
+        <div className="chatbox min-h-[70vh]">
           <div className="flex-box chat-log h-full">
             {loading ? (
               <>
