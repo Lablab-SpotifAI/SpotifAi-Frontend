@@ -274,7 +274,7 @@ export const Chat = () => {
                     <source src={audioURL} type="audio/mpeg" />
                   </audio>
   	    	  <div>
-                  <button onclick="toggle(this);" className='border rounded-lg text-slate-200 bg-blue-500 p-2 text-lg border-slate-300'>Hide Audio</button>
+                  <button onClick="toggle(this)" className='border rounded-lg text-slate-200 bg-blue-500 p-2 text-lg border-slate-300'>Hide Audio</button>
                   <a href={audioUrl} download="spotifAI_podcast.wav" className='border rounded-lg text-slate-200 bg-blue-500 p-2 text-lg border-slate-300'>Download</a>
 		   </div>
 		</div>
