@@ -36,6 +36,8 @@ export default {
 
           info: "#13012f",
 
+          btn: "#11001C",
+
           success: "#80ced1",
 
           warning: "#efd8bd",
