@@ -94,3 +94,9 @@
 .read-the-docs {
   color: #888;
 }
+
+.audio-player audio {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+}

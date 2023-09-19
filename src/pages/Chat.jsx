@@ -186,7 +186,7 @@ export const Chat = () => {
     const options = {
       method: "POST",
       url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceKey}/stream`,
-      // url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceKey}`,
+       // url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceKey}`,
       headers: {
         // accept: "audio/mpeg", // Set the expected response type to audio/mpeg.
         accept: "audio/wav", // Set the expected response type to audio/mpeg.
@@ -196,7 +196,8 @@ export const Chat = () => {
       data: {
         text: inputText, // Pass in the inputText as the text to be converted to speech.
       },
-      responseType: "arraybuffer", // Set the responseType to arraybuffer to receive binary data as response.
+      responseType: "stream",
+      // responseType: "arraybuffer",  Set the responseType to arraybuffer to receive binary data as response.
     };
 
     // Send the API request using Axios and wait for the response.
@@ -220,6 +221,19 @@ export const Chat = () => {
 
     enablePrompt();
   };
+
+  let toggle = button => {
+     let element = document.getElementById("myaudio");
+     let hidden = element.getAttribute("hidden");
+
+     if (hidden) {
+        element.removeAttribute("hidden");
+        button.innerText = "Hide Audio";
+     } else {
+        element.setAttribute("hidden", "hidden");
+        button.innerText = "Show Audio";
+     }
+  }
 
   return (
     <>
@@ -255,9 +269,15 @@ export const Chat = () => {
                 ))}
 
                 {audioURL ? (
-                  <audio autoPlay controls>
+                 <div className="audio-player">
+                  <audio autoPlay controls hidden id="myaudio">
                     <source src={audioURL} type="audio/mpeg" />
                   </audio>
+  	    	  <div>
+                  <button onclick="toggle(this);" className='border rounded-lg text-slate-200 bg-blue-500 p-2 text-lg border-slate-300'>Hide Audio</button>
+                  <a href={audioUrl} download="spotifAI_podcast.wav" className='border rounded-lg text-slate-200 bg-blue-500 p-2 text-lg border-slate-300'>Download</a>
+		   </div>
+		</div>
                 ) : (
                   <div className="flex flex-col items-center">
                     <div>
