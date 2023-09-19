@@ -38,7 +38,7 @@ export const Chat = () => {
   const [audioURL, setAudioURL] = useState(null);
 
   const prompt = document.querySelector("input");
-  const btn = document.querySelector("button");
+  const btn = document.getElementById("clk");
 
   function disablePrompt() {
     prompt.disabled = true;
@@ -134,7 +134,7 @@ export const Chat = () => {
       model: "gpt-3.5-turbo",
       messages: [systemMessage, ...apiMessages],
       // messages: [ ...apiMessages],
-      max_tokens: 100,
+       // max_tokens: 100,
       // max_tokens: tokens,
     };
     let response = "";
@@ -226,12 +226,12 @@ export const Chat = () => {
       <Header />
       {/* <div className="Chat flex-box flex-col"> */}
       <div className="flex flex-col relative">
-        <div className="chatbox min-h-[70vh]">
-          <div className="flex-box chat-log h-full">
+        <div className="chatbox min-h-[70vh] max-h-[70vh]">
+          <div className="chat-log h-full">
             {loading ? (
               <>
-                <div className="flex-box">
-                  <div className="flex-box ">
+                <div className="flex-box mt-40">
+                  <div className="flex-box">
                     <img src="micro.svg" alt="micro" className="w-1/3 h-1/3" />
                   </div>
                 </div>
@@ -282,17 +282,18 @@ export const Chat = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your idea"
-              className="clk text-white text-base font-normal flex-box flex pl-6 flex-[0.8] py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 w-full md:h-20"
+              className="text-white text-base font-normal flex-box flex pl-6 flex-[0.8] py-5 bg-neutral-700 bg-opacity-20 rounded-[50px] border border-zinc-400 border-opacity-60 backdrop-blur-[60px] justify-start items-center gap-2 w-full md:h-20"
             />
-            <button
-              className="clk px-2 py-5 md:h-20 rounded-full flex-[0.2] flex-box hover:text-purple-950 hover:bg-secondary cursor-pointer btn-primary capitalize btn-block lg:btn-wide font-neov "
+            <button id="clk"
+              className="px-2 py-5 md:h-20 rounded-full flex-[0.2] flex-box hover:text-purple-950 hover:bg-secondary cursor-pointer btn-primary capitalize btn-block lg:btn-wide font-neov "
               onClick={handleSubmit}
             >
               <img className="h-5 w-5" src="/stars.png" alt="stars" />
               <p className="text-base font-normal px-2 hidden md:block hover:font-bold">
                 Generate
               </p>
-            </button>
+            
+              </button>
           </form>
         </div>
       </div>
