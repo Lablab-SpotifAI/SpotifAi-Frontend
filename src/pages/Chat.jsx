@@ -191,8 +191,8 @@ export const Chat = () => {
       url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceKey}/stream`,
       // url: `https://api.elevenlabs.io/v1/text-to-speech/${voiceKey}`,
       headers: {
-        // accept: "audio/mpeg", // Set the expected response type to audio/mpeg.
-        accept: "audio/wav", // Set the expected response type to audio/mpeg.
+        accept: "audio/mpeg", // Set the expected response type to audio/mpeg.
+        // accept: "audio/wav", // Set the expected response type to audio/mpeg.
         "content-type": "application/json", // Set the content type to application/json.
         "xi-api-key": `${elevenKey}`, // Set the API key in the headers.
       },
