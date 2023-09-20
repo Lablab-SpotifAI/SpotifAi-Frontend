@@ -35,9 +35,10 @@ export const Chat = () => {
   const [loading, setLoading] = useState(true);
 
   // Define a state variable to hold the audio URL
-  const [audioURL, setAudioURL] = useState("");
+  const [audioURL, setAudioURL] = useState(null);
 
   const prompt = document.querySelector("input");
+  // const btn = document.getElementsByClassName("clk");
   const btn = document.getElementById("clk");
 
   function disablePrompt() {
@@ -222,18 +223,20 @@ export const Chat = () => {
     enablePrompt();
   };
 
-  let toggle = (button) => {
-    let element = document.getElementById("myaudio");
-    let hidden = element.getAttribute("hidden");
+  // let toggle = (button) => {
+  //   let element = document.getElementById("myaudio");
+  //   let hidden = element.getAttribute("hidden");
 
-    if (hidden) {
-      element.removeAttribute("hidden");
-      button.innerText = "Hide Audio";
-    } else {
-      element.setAttribute("hidden", "hidden");
-      button.innerText = "Show Audio";
-    }
-  };
+  //   if (hidden) {
+  //     element.removeAttribute("hidden");
+  //     button.innerText = "Hide Audio";
+  //   } else {
+  //     element.setAttribute("hidden", "hidden");
+  //     button.innerText = "Show Audio";
+  //   }
+  // };
+  const [audioOpen, setAudioOpen] = useState(false);
+  const [buttonShow, setButtonShow] = useState("Show Audio");
 
   return (
     <>
@@ -268,39 +271,58 @@ export const Chat = () => {
                   <ChatMessage key={i} messages={message} />
                 ))}
 
-                {audioURL ? (
-                  <div className="audio-player w-full">
-                    <audio autoPlay controls hidden id="myaudio">
-                      <source src={audioURL} type="audio/mpeg" />
-                    </audio>
-                    <div className="flex-box space-x-14 py-10">
-                      <button
-                        onClick="toggle(this)"
-                        className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
+                {/* {audioURL ? ( */}
+                <div className="w-full flex-box flex-col py-5">
+                  {audioOpen && (
+                    <>
+                      <audio
+                        autoPlay
+                        controls
+                        id="myaudio"
+                        className="audio-player"
                       >
-                        Hide Audio
-                      </button>
-                      <a
-                        href={audioURL}
-                        download="spotifAI_podcast.wav"
-                        className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
-                      >
-                        Download
-                      </a>
-                    </div>
+                        <source src={audioURL} type="audio/mpeg" />
+                      </audio>
+                    </>
+                  )}
+
+                  <div className="flex-box space-x-14 py-10">
+                    <button
+                      // onClick={toggle(this)}
+                      onClick={() => {
+                        setAudioOpen((open) => !open);
+                        setButtonShow("Hide Audio");
+                      }}
+                      className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
+                    >
+                      {audioOpen ? (
+                        <span>Hide Audio</span>
+                      ) : (
+                        <span>Show Audio</span>
+                      )}
+                      {/* <span>{buttonShow}</span> */}
+                    </button>
+                    <a
+                      href={audioURL}
+                      download="spotifAI_podcast.wav"
+                      className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
+                    >
+                      Download
+                    </a>
                   </div>
-                ) : (
-                  <div className="flex flex-col items-center py-10">
-                    <div>
-                      <ScaleLoader color="#36d7b7" />
-                    </div>
-                    <div>
-                      <p className="text-md font-medium text-slate-100 pt-8">
-                        SpotifAI is generating...
-                      </p>
-                    </div>
+                </div>
+                {/* ) : ( */}
+                <div className="flex flex-col items-center py-10">
+                  <div>
+                    <ScaleLoader color="#36d7b7" />
                   </div>
-                )}
+                  <div>
+                    <p className="text-md font-medium text-slate-100 pt-8">
+                      SpotifAI is generating...
+                    </p>
+                  </div>
+                </div>
+                {/* )} */}
               </>
             )}
           </div>
@@ -317,11 +339,11 @@ export const Chat = () => {
             />
             <button
               id="clk"
-              className="px-2 py-5 md:h-20 rounded-full flex-[0.2] flex-box hover:text-purple-950 hover:bg-secondary cursor-pointer btn-primary capitalize btn-block lg:btn-wide font-neov "
+              className="clk px-2 py-5 md:h-20 rounded-full flex-[0.2] flex-box hover:bg-secondary cursor-pointer btn-primary capitalize btn-block lg:btn-wide font-neov "
               onClick={handleSubmit}
             >
-              <img className="h-5 w-5" src="/stars.png" alt="stars" />
-              <p className="text-base font-normal px-2 hidden md:block hover:font-bold">
+              <img className="h-5 w-5 clk" src="/stars.png" alt="stars" />
+              <p className="text-base px-2 hidden md:block font-bold clk">
                 Generate
               </p>
             </button>
