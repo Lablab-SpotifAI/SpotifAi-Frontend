@@ -248,17 +248,17 @@ export const Chat = () => {
         <div className="chatbox min-h-[70vh] max-h-[70vh]">
           <div className="chat-log h-full">
             {loading ? (
-              <>
+              <div className="flex-box flex-col">
                 <div className="flex-box mt-40">
                   <div className="flex-box">
                     <img src="micro.svg" alt="micro" className="w-1/3 h-1/3" />
                   </div>
                 </div>
-                <div className="">
+                <div className="space-x-1 flex-box flex-col md:flex-row text-center">
                   <span className="text-neutral-50 text-[22px] font-bold">
                     Let’s{" "}
                   </span>
-                  <span className="text-purple-950 text-[22px] font-bold">
+                  <span className="text-purple-950 text-[22px] font-bold ">
                     generate
                   </span>
                   <span className="text-neutral-50 text-[22px] font-bold">
@@ -266,7 +266,7 @@ export const Chat = () => {
                     some magic start now.
                   </span>
                 </div>
-              </>
+              </div>
             ) : (
               <>
                 {messages.map((message, i) => (
@@ -331,7 +331,7 @@ export const Chat = () => {
           </div>
         </div>
 
-        <div className="chat-input-holder flex-box w-[90vw] px-3">
+        <div className="chat-input-holder flex-box px-3">
           <form onSubmit={handleSubmit} className="flex-box flex-[0.8] w-full">
             <input
               rows="1"
