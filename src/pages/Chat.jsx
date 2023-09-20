@@ -35,7 +35,7 @@ export const Chat = () => {
   const [loading, setLoading] = useState(true);
 
   // Define a state variable to hold the audio URL
-  const [audioURL, setAudioURL] = useState(null);
+  const [audioURL, setAudioURL] = useState("");
 
   const prompt = document.querySelector("input");
   // const btn = document.getElementsByClassName("clk");
@@ -216,7 +216,7 @@ export const Chat = () => {
     // const data = await textToSpeech("Hello welcome");
     const data = await textToSpeech(text);
     // Create a new Blob object from the audio data with MIME type 'audio/mpeg'
-    const blob = new Blob([data], { type: "audio/wav" });
+    const blob = new Blob([data], { type: "audio/mpeg" });
     // Create a URL for the blob object
     const url = URL.createObjectURL(blob);
     // Set the audio URL state variable to the newly created URL
@@ -238,7 +238,7 @@ export const Chat = () => {
   //   }
   // };
   const [audioOpen, setAudioOpen] = useState(false);
-  const [buttonShow, setButtonShow] = useState("Show Audio");
+  // const [buttonShow, setButtonShow] = useState("Show Audio");
 
   return (
     <>
@@ -277,8 +277,13 @@ export const Chat = () => {
                   <div className="w-full flex-box flex-col py-5">
                     {audioOpen && (
                       <>
-                        <audio autoPlay controls className="audio-player">
-                          <source src={audioURL} type="audio/wav" />
+                        <audio
+                          autoPlay
+                          controls
+                          src={audioURL}
+                          className="audio-player"
+                        >
+                          {/* <source src={audioURL} type="audio/mpeg" /> */}
                         </audio>
                       </>
                     )}
@@ -288,7 +293,7 @@ export const Chat = () => {
                         // onClick={toggle(this)}
                         onClick={() => {
                           setAudioOpen((open) => !open);
-                          setButtonShow("Hide Audio");
+                          // setButtonShow("Hide Audio");
                         }}
                         className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
                       >
