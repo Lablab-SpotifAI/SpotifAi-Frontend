@@ -35,7 +35,7 @@ export const Chat = () => {
   const [loading, setLoading] = useState(true);
 
   // Define a state variable to hold the audio URL
-  const [audioURL, setAudioURL] = useState("");
+  const [audioURL, setAudioURL] = useState(null);
 
   const prompt = document.querySelector("input");
   // const btn = document.getElementsByClassName("clk");
