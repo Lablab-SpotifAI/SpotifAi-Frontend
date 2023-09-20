@@ -271,58 +271,58 @@ export const Chat = () => {
                   <ChatMessage key={i} messages={message} />
                 ))}
 
-                {/* {audioURL ? ( */}
-                <div className="w-full flex-box flex-col py-5">
-                  {audioOpen && (
-                    <>
-                      <audio
-                        autoPlay
-                        controls
-                        id="myaudio"
-                        className="audio-player"
-                      >
-                        <source src={audioURL} type="audio/mpeg" />
-                      </audio>
-                    </>
-                  )}
+                {audioURL ? (
+                  <div className="w-full flex-box flex-col py-5">
+                    {audioOpen && (
+                      <>
+                        <audio
+                          autoPlay
+                          controls
+                          id="myaudio"
+                          className="audio-player"
+                        >
+                          <source src={audioURL} type="audio/mpeg" />
+                        </audio>
+                      </>
+                    )}
 
-                  <div className="flex-box space-x-14 py-10">
-                    <button
-                      // onClick={toggle(this)}
-                      onClick={() => {
-                        setAudioOpen((open) => !open);
-                        setButtonShow("Hide Audio");
-                      }}
-                      className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
-                    >
-                      {audioOpen ? (
-                        <span>Hide Audio</span>
-                      ) : (
-                        <span>Show Audio</span>
-                      )}
-                      {/* <span>{buttonShow}</span> */}
-                    </button>
-                    <a
-                      href={audioURL}
-                      download="spotifAI_podcast.wav"
-                      className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
-                    >
-                      Download
-                    </a>
+                    <div className="flex-box space-x-14 py-10">
+                      <button
+                        // onClick={toggle(this)}
+                        onClick={() => {
+                          setAudioOpen((open) => !open);
+                          setButtonShow("Hide Audio");
+                        }}
+                        className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
+                      >
+                        {audioOpen ? (
+                          <span>Hide Audio</span>
+                        ) : (
+                          <span>Show Audio</span>
+                        )}
+                        {/* <span>{buttonShow}</span> */}
+                      </button>
+                      <a
+                        href={audioURL}
+                        download="spotifAI_podcast.wav"
+                        className="border rounded-lg text-slate-200 bg-info hover:text-[#11001C] hover:bg-success p-2 text-lg border-slate-300"
+                      >
+                        Download
+                      </a>
+                    </div>
                   </div>
-                </div>
-                {/* ) : ( */}
-                <div className="flex flex-col items-center py-10">
-                  <div>
-                    <ScaleLoader color="#36d7b7" />
+                ) : (
+                  <div className="flex flex-col items-center py-10">
+                    <div>
+                      <ScaleLoader color="#36d7b7" />
+                    </div>
+                    <div>
+                      <p className="text-md font-medium text-slate-100 pt-8">
+                        SpotifAI is generating...
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-md font-medium text-slate-100 pt-8">
-                      SpotifAI is generating...
-                    </p>
-                  </div>
-                </div>
-                {/* )} */}
+                )}
               </>
             )}
           </div>
