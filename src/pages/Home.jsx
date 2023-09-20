@@ -3,7 +3,6 @@ import { Header } from "../components/Home/Header";
 import { useEffect, useState } from "react";
 import { auth } from "../config/firebase";
 
-
 export const Home = () => {
   const nav = useNavigate();
   const [user, setUser] = useState(null);
@@ -84,23 +83,23 @@ export const Home = () => {
           />
         </div>
       </div>
-      
-      <div class="flex flex-col w-full justify-center items-center lg:px-24 lg:pb-20 px-6 pb-6">
-        <div class="flex-box flex-col md:flex-row lg:pb-32 lg:pt-72 pb-16 pt-16">
+
+      <div className="flex flex-col w-full justify-center items-center lg:px-24 lg:pb-20 px-6 pb-6">
+        <div className="flex-box flex-col md:flex-row lg:pb-32 lg:pt-72 pb-16 pt-16">
           <div>
             <img
-              src='heart-face.svg'
-              class="max-w-lg lg:max-w-lg"
+              src="heart-face.svg"
+              className="max-w-lg lg:max-w-lg"
               alt="heart face"
               width="305"
               height="293"
             />
           </div>
-          <div class=" lg:w-[70%]">
-            <h3 class="text-3xl font-medium lg:text-5xl my-5">
+          <div className=" lg:w-[70%]">
+            <h3 className="text-3xl font-medium lg:text-5xl my-5">
               What is <span>SpotifAI?</span>
             </h3>
-            <p class="">
+            <p className="">
               SpotifAI is an AI platform that helps you create podcasts. Just
               give it an idea, and it will generate a podcast script for you in
               text format You can then use the script to create an audio
@@ -112,54 +111,48 @@ export const Home = () => {
           </div>
         </div>
         {/* second */}
-        <div class="flex-box flex-col-reverse lg:flex-row w-full mb-16">
-          <div class="lg:w-[70%]">
-            <h3 class="text-3xl font-medium lg:text-5xl my-5">
+        <div className="flex-box flex-col-reverse lg:flex-row w-full mb-16">
+          <div className="lg:w-[70%]">
+            <h3 className="text-3xl font-medium lg:text-5xl my-5">
               Can experts use SpotifAI?
             </h3>
-            <p class="mb-6 text-lg">
+            <p className="mb-6 text-lg">
               SpotifAI has the potential to revolutionize the podcast field. By
               making it easier and faster to create high-quality podcasts,
               Leonardo can help more people start and grow their podcast
               businesses.Experts in the podcast field can use Leonardo to reach
               another level by:
             </p>
-            <ul class="list-inside flex-col">
-              <li class="flex items-start gap-2 mb-3">
-                
-<img
-              src='green-star.png'
-              class="max-w-lg lg:max-w-lg"
-              alt="heart face"
-              
-            />
+            <ul className="list-inside flex-col">
+              <li className="flex items-start gap-2 mb-3">
+                <img
+                  src="green-star.png"
+                  className="max-w-lg lg:max-w-lg"
+                  alt="heart face"
+                />
                 Creating more content: Leonardo can help experts create more
                 content by automating the scriptwriting process. This frees up
                 experts' time so they can focus on other aspects of their
                 podcast business, such as promoting and distributing their
                 content.
               </li>
-              <li class="flex items-start gap-2 mb-3">
-                
-<img
-              src='yellow-star.png'
-              class="max-w-lg lg:max-w-lg"
-              alt="heart face"
-              
-            />
+              <li className="flex items-start gap-2 mb-3">
+                <img
+                  src="yellow-star.png"
+                  className="max-w-lg lg:max-w-lg"
+                  alt="heart face"
+                />
                 Improving the quality of their content: Leonardo can help
                 experts improve the quality of their content by generating
                 scripts that are both creative and engaging. This can help
                 experts attract more listeners and build a loyal audience.
               </li>
-              <li class="flex items-start gap-2">
-                
-<img
-              src='pink-star.png'
-              class="max-w-lg lg:max-w-lg"
-              alt="heart face"
-              
-            />
+              <li className="flex items-start gap-2">
+                <img
+                  src="pink-star.png"
+                  className="max-w-lg lg:max-w-lg"
+                  alt="heart face"
+                />
                 Experimenting with new formats: Leonardo can help experts
                 experiment with new podcast formats, such as interview shows,
                 narrative podcasts, and comedy podcasts. This can help experts
@@ -170,16 +163,16 @@ export const Home = () => {
           </div>
           <div>
             <img
-              src='bang.svg'
-              class="max-w-lg lg:max-w-lg"
+              src="bang.svg"
+              className="max-w-lg lg:max-w-lg"
               alt="bang"
               height={293}
               width={305}
             />
           </div>
         </div>
-        <div class="w-full h-full lg:px-10 lg:py-10 p-4 md:w-[984px] md:h-[120px]  rounded-[100px] border border-stone-300 backdrop-blur-[45px] flex-box flex-col bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text  text-transparent">
-          <div class="text-center text-md lg:text-[1.30rem] font-bold">
+        <div className="w-full h-full lg:px-10 lg:py-10 p-4 md:w-[984px] md:h-[120px]  rounded-[100px] border border-stone-300 backdrop-blur-[45px] flex-box flex-col bg-gradient-to-r from-blue-500 to-green-500 bg-clip-text  text-transparent">
+          <div className="text-center text-md lg:text-[1.30rem] font-bold">
             Make the journey begin. Let your ideas shine and make your first
             podcast.{" "}
           </div>

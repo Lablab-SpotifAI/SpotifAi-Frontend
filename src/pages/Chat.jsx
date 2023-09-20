@@ -199,8 +199,8 @@ export const Chat = () => {
       data: {
         text: inputText, // Pass in the inputText as the text to be converted to speech.
       },
-      responseType: "stream",
-      // responseType: "arraybuffer",  Set the responseType to arraybuffer to receive binary data as response.
+      // responseType: "stream",
+      responseType: "arraybuffer", // Set the responseType to arraybuffer to receive binary data as response.
     };
 
     // Send the API request using Axios and wait for the response.
@@ -282,7 +282,7 @@ export const Chat = () => {
                           controls
                           src={audioURL}
                           className="audio-player"
-                          type="audio/mpeg" 
+                          type="audio/mpeg"
                         >
                           {/* <source src={audioURL} type="audio/mpeg" /> */}
                         </audio>
