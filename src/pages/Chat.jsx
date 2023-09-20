@@ -172,6 +172,8 @@ export const Chat = () => {
         // response = err.message;
       });
     setInput("");
+    // setAudioURL("hello.wav");
+
     // enablePrompt();
   }
 
@@ -214,7 +216,7 @@ export const Chat = () => {
     // const data = await textToSpeech("Hello welcome");
     const data = await textToSpeech(text);
     // Create a new Blob object from the audio data with MIME type 'audio/mpeg'
-    const blob = new Blob([data], { type: "audio/mpeg" });
+    const blob = new Blob([data], { type: "audio/wav" });
     // Create a URL for the blob object
     const url = URL.createObjectURL(blob);
     // Set the audio URL state variable to the newly created URL
@@ -275,13 +277,8 @@ export const Chat = () => {
                   <div className="w-full flex-box flex-col py-5">
                     {audioOpen && (
                       <>
-                        <audio
-                          autoPlay
-                          controls
-                          id="myaudio"
-                          className="audio-player"
-                        >
-                          <source src={audioURL} type="audio/mpeg" />
+                        <audio autoPlay controls className="audio-player">
+                          <source src={audioURL} type="audio/wav" />
                         </audio>
                       </>
                     )}
