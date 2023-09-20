@@ -282,6 +282,7 @@ export const Chat = () => {
                           controls
                           src={audioURL}
                           className="audio-player"
+                          type="audio/mpeg" 
                         >
                           {/* <source src={audioURL} type="audio/mpeg" /> */}
                         </audio>
