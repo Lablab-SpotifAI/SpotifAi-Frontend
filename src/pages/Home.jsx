@@ -103,7 +103,7 @@ export const Home = () => {
               SpotifAI is an AI platform that helps you create podcasts. Just
               give it an idea, and it will generate a podcast script for you in
               text format You can then use the script to create an audio
-              podcast.Leonardo is free to use for basic features, and there are
+              podcast.SpotifAI is free to use for basic features, and there are
               paid plans available for businesses and teams. Here are some of
               the benefits of using SpotifAI to create podcasts: Save
               time,Improve quality,Get feedback and Collaborate with others
@@ -119,8 +119,8 @@ export const Home = () => {
             <p className="mb-6 text-lg">
               SpotifAI has the potential to revolutionize the podcast field. By
               making it easier and faster to create high-quality podcasts,
-              Leonardo can help more people start and grow their podcast
-              businesses.Experts in the podcast field can use Leonardo to reach
+              SpotifAI can help more people start and grow their podcast
+              businesses.Experts in the podcast field can use SpotifAI to reach
               another level by:
             </p>
             <ul className="list-inside flex-col">
@@ -130,7 +130,7 @@ export const Home = () => {
                   className="max-w-lg lg:max-w-lg"
                   alt="heart face"
                 />
-                Creating more content: Leonardo can help experts create more
+                Creating more content: SpotifAI can help experts create more
                 content by automating the scriptwriting process. This frees up
                 experts' time so they can focus on other aspects of their
                 podcast business, such as promoting and distributing their
@@ -142,7 +142,7 @@ export const Home = () => {
                   className="max-w-lg lg:max-w-lg"
                   alt="heart face"
                 />
-                Improving the quality of their content: Leonardo can help
+                Improving the quality of their content: SpotifAI can help
                 experts improve the quality of their content by generating
                 scripts that are both creative and engaging. This can help
                 experts attract more listeners and build a loyal audience.
@@ -153,7 +153,7 @@ export const Home = () => {
                   className="max-w-lg lg:max-w-lg"
                   alt="heart face"
                 />
-                Experimenting with new formats: Leonardo can help experts
+                Experimenting with new formats: SpotifAI can help experts
                 experiment with new podcast formats, such as interview shows,
                 narrative podcasts, and comedy podcasts. This can help experts
                 find new ways to connect with their audience and stay ahead of
